@@ -1,0 +1,9 @@
+{
+  "name": "muscu-app-body",
+  "short_name": "MuscuApp",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
