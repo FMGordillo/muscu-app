@@ -3,38 +3,38 @@ import { useEffect } from "react";
 import { APP_DESCRIPTION, APP_NAME } from "../utils/constants";
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      "serviceWorker" in navigator &&
-      window.workbox !== undefined
-    ) {
-      const wb = window.workbox;
-      const promptNewVersionAvailable = (_event: any) => {
-        if (
-          confirm(
-            "A newer version of this web app is available, reload to update?"
-          )
-        ) {
-          wb.addEventListener("controlling", (_event: any) => {
-            window.location.reload();
-          });
+  // useEffect(() => {
+  //   if (
+  //     typeof window !== "undefined" &&
+  //     "serviceWorker" in navigator &&
+  //     window.workbox !== undefined
+  //   ) {
+  //     const wb = window.workbox;
+  //     const promptNewVersionAvailable = (_event: any) => {
+  //       if (
+  //         confirm(
+  //           "A newer version of this web app is available, reload to update?"
+  //         )
+  //       ) {
+  //         wb.addEventListener("controlling", (_event: any) => {
+  //           window.location.reload();
+  //         });
 
-          // Send a message to the waiting service worker, instructing it to activate.
-          wb.messageSkipWaiting();
-        } else {
-          console.log(
-            "User rejected to reload the web app, keep using old version. New version will be automatically load when user open the app next time."
-          );
-        }
-      };
+  //         // Send a message to the waiting service worker, instructing it to activate.
+  //         wb.messageSkipWaiting();
+  //       } else {
+  //         console.log(
+  //           "User rejected to reload the web app, keep using old version. New version will be automatically load when user open the app next time."
+  //         );
+  //       }
+  //     };
 
-      wb.addEventListener("waiting", promptNewVersionAvailable);
+  //     wb.addEventListener("waiting", promptNewVersionAvailable);
 
-      // never forget to call register as auto register is turned off in next.config.js
-      wb.register();
-    }
-  }, []);
+  //     // never forget to call register as auto register is turned off in next.config.js
+  //     wb.register();
+  //   }
+  // }, []);
 
   return (
     <html lang="es">
