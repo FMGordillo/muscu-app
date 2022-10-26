@@ -1,8 +1,12 @@
 import "../styles/globals.css";
-import { useEffect } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { APP_DESCRIPTION, APP_NAME } from "../utils/constants";
 
-export default function RootLayout({ children }) {
+type RootLayoutProps = {
+  children?: ReactNode;
+};
+
+const RootLayout: FunctionComponent<RootLayoutProps> = ({ children }) => {
   // useEffect(() => {
   //   if (
   //     typeof window !== "undefined" &&
@@ -126,4 +130,6 @@ export default function RootLayout({ children }) {
       <body>{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;
