@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { FunctionComponent, useEffect } from "react";
+import { FunctionComponent, ReactNode, useEffect } from "react";
 import { APP_DESCRIPTION, APP_NAME } from "../utils/constants";
 
 type RootLayoutProps = {
