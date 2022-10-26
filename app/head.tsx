@@ -1,4 +1,4 @@
-import { APP_NAME } from "../../utils/constants";
+import { APP_NAME } from "../utils/constants";
 
 export default function Head() {
   return (
